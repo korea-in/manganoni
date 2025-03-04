@@ -5,7 +5,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 Drawer mainDrawerWidget(BuildContext context) {
   return Drawer(
-      backgroundColor: backgroundColor,
+      backgroundColor: themeWhite,
       child: ListView(
         padding: EdgeInsets.zero,
         children: [
@@ -13,7 +13,7 @@ Drawer mainDrawerWidget(BuildContext context) {
               padding:
                   const EdgeInsets.only(left: 8, right: 8, top: 12, bottom: 18),
               decoration: BoxDecoration(
-                color: appbarBackgroundColor,
+                color: themeMain,
               ),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -95,7 +95,7 @@ Drawer mainDrawerWidget(BuildContext context) {
           ListTile(
             leading: Icon(
               Icons.home,
-              color: iconBlackColor,
+              color: themeBlack,
             ),
             title: const Text('홈'),
             onTap: () {},
@@ -103,7 +103,7 @@ Drawer mainDrawerWidget(BuildContext context) {
           ListTile(
             leading: Icon(
               Icons.settings,
-              color: iconBlackColor,
+              color: themeBlack,
             ),
             title: const Text('상점'),
             onTap: () {},
@@ -111,7 +111,7 @@ Drawer mainDrawerWidget(BuildContext context) {
           ListTile(
             leading: Icon(
               Icons.settings,
-              color: iconBlackColor,
+              color: themeBlack,
             ),
             title: const Text('둘러보기'),
             onTap: () {},
@@ -119,7 +119,7 @@ Drawer mainDrawerWidget(BuildContext context) {
           ListTile(
             leading: Icon(
               Icons.settings,
-              color: iconBlackColor,
+              color: themeBlack,
             ),
             title: const Text('우리의 활동'),
             onTap: () {},
@@ -127,7 +127,7 @@ Drawer mainDrawerWidget(BuildContext context) {
           ListTile(
             leading: Icon(
               Icons.question_answer,
-              color: iconBlackColor,
+              color: themeBlack,
             ),
             title: const Text('라이선스 정보'),
             onTap: () {},

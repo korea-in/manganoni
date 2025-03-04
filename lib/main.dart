@@ -1,6 +1,5 @@
 import 'package:mang_ga_no_ni/util/pref_handler.dart';
 import 'package:mang_ga_no_ni/view/agree_view.dart';
-import 'package:mang_ga_no_ni/static_page/enter_page.dart';
 import 'package:mang_ga_no_ni/static_page/loading_page.dart';
 import 'package:mang_ga_no_ni/static_page/success_signup_page.dart';
 import 'package:mang_ga_no_ni/view/login_view.dart';
@@ -25,9 +24,9 @@ class Myapp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         theme: ThemeData(
-            fontFamily: "bongodicMedium",
-            scaffoldBackgroundColor: backgroundColor,
-            appBarTheme: AppBarTheme(color: appbarBackgroundColor)),
+            fontFamily: "bongodicBold",
+            scaffoldBackgroundColor: themeWhite,
+            appBarTheme: AppBarTheme(color: themeMain)),
         debugShowCheckedModeBanner: false,
         title: "Flutter App",
         routes: {
@@ -35,7 +34,6 @@ class Myapp extends StatelessWidget {
 
           //회원가입 및 로그인
           '/agree': (context) => const AgreeView(),
-          '/enter': (context) => const EnterPage(),
           '/login': (context) => const LoginView(),
           '/success': (context) => const SuccessSignupPage(),
 

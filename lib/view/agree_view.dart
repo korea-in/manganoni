@@ -28,7 +28,7 @@ class _AgreeViewState extends State<AgreeView> {
               "베이커리 타임",
               style: TextStyle(
                   fontSize: 25,
-                  color: iconPrimaryColor,
+                  color: themeDeepMain,
                   fontWeight: FontWeight.bold),
             ),
             const Text(
@@ -40,13 +40,13 @@ class _AgreeViewState extends State<AgreeView> {
               padding: const EdgeInsets.only(top: 10, bottom: 10),
               decoration: BoxDecoration(
                 borderRadius: const BorderRadius.all(Radius.circular(10.0)),
-                color: buttonSubColor,
+                color: themeMain,
               ),
               child: ListTile(
                 leading: GestureDetector(
                   child: Icon(
                     Icons.verified,
-                    color: allCheck() ? iconPrimaryColor : iconGreyColor,
+                    color: allCheck() ? themeDeepMain : themeGrey,
                     size: 25,
                   ),
                   onTap: () => {
@@ -84,7 +84,7 @@ class _AgreeViewState extends State<AgreeView> {
               leading: GestureDetector(
                 child: Icon(
                   Icons.verified,
-                  color: _agree1 ? iconPrimaryColor : iconGreyColor,
+                  color: _agree1 ? themeDeepMain : themeGrey,
                   size: 25,
                 ),
                 onTap: () => {
@@ -102,7 +102,7 @@ class _AgreeViewState extends State<AgreeView> {
               leading: GestureDetector(
                 child: Icon(
                   Icons.verified,
-                  color: _agree2 ? iconPrimaryColor : iconGreyColor,
+                  color: _agree2 ? themeDeepMain : themeGrey,
                   size: 25,
                 ),
                 onTap: () => {
@@ -120,7 +120,7 @@ class _AgreeViewState extends State<AgreeView> {
               leading: GestureDetector(
                 child: Icon(
                   Icons.verified,
-                  color: _agree3 ? iconPrimaryColor : iconGreyColor,
+                  color: _agree3 ? themeDeepMain : themeGrey,
                   size: 25,
                 ),
                 onTap: () => {
@@ -146,8 +146,7 @@ class _AgreeViewState extends State<AgreeView> {
                 child: Center(
                     child: Text("모두 동의합니다.",
                         style: TextStyle(
-                            color: textWhiteColor,
-                            fontWeight: FontWeight.w800))),
+                            color: themeWhite, fontWeight: FontWeight.w800))),
               ),
             ),
           ],
@@ -167,7 +166,7 @@ InputDecoration textInputStyle(IconData icon) {
     border: const OutlineInputBorder(
       borderRadius: BorderRadius.all(Radius.circular(10.0)),
     ),
-    fillColor: textWhiteColor,
+    fillColor: themeWhite,
     filled: true,
     prefixIcon: Icon(icon),
   );
@@ -176,6 +175,6 @@ InputDecoration textInputStyle(IconData icon) {
 BoxDecoration nextButtonStyle(bool agreeState) {
   return BoxDecoration(
     borderRadius: const BorderRadius.all(Radius.circular(10.0)),
-    color: agreeState ? buttonActiveColor : buttonDisableColor,
+    color: agreeState ? themeDeepMain : themeLightGrey,
   );
 }

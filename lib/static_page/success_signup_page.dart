@@ -17,12 +17,16 @@ class SuccessSignupPage extends StatelessWidget {
             Text(
               "회원가입을 완료했습니다.",
               style: TextStyle(
-                  fontFamily: "euljiro", color: textBlackColor, fontSize: 30),
+                  fontFamily: "bongodicExtraBold",
+                  color: themeBlack,
+                  fontSize: 30),
             ),
             Text(
               "서비스 이용을 위해 로그인해주세요.",
               style: TextStyle(
-                  fontFamily: "euljiro", color: textGreyColor, fontSize: 20),
+                  fontFamily: "bongodicExtraBold",
+                  color: themeGrey,
+                  fontSize: 20),
             ),
             const Expanded(child: SizedBox.shrink()),
             GestureDetector(
@@ -49,12 +53,12 @@ class SuccessSignupPage extends StatelessWidget {
 BoxDecoration loginButtonStyle() {
   return BoxDecoration(
     borderRadius: const BorderRadius.all(Radius.circular(10.0)),
-    color: buttonActiveColor,
+    color: themeDeepMain,
   );
 }
 
 TextStyle loginButtonTextStyle() {
   return TextStyle(
-    color: textWhiteColor,
+    color: themeWhite,
   );
 }

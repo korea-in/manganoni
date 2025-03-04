@@ -13,8 +13,6 @@ class LoginView extends StatefulWidget {
 }
 
 class _LoginViewState extends State<LoginView> {
-  final _idTextController = TextEditingController();
-  final _pwTextController = TextEditingController();
   late final SharedPreferences _prefs;
   @override
   Widget build(BuildContext context) {
@@ -24,120 +22,56 @@ class _LoginViewState extends State<LoginView> {
           children: [
             emptyExpanded(),
             Text(
-              "베이커리 타임",
+              "자기소개서로 힘들어하는 이들을 위해",
               style: TextStyle(
-                  color: textPrimaryColor,
-                  fontWeight: FontWeight.bold,
-                  fontFamily: "euljiro",
-                  fontSize: 30),
+                  color: themeMain,
+                  fontFamily: "bongodicExtraBold",
+                  fontSize: 18),
             ),
             Text(
-              "이제는 시간을 구울 시간",
+              "맹가노니",
               style: TextStyle(
-                  color: textprimarySoftColor,
-                  fontWeight: FontWeight.w700,
-                  fontFamily: "euljiro",
-                  fontSize: 20),
+                  color: themeMain,
+                  fontFamily: "bongodicExtraBold",
+                  fontSize: 40),
             ),
-            Container(
-              padding: const EdgeInsets.all(30),
-              width: MediaQuery.of(context).size.width,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  TextField(
-                    controller: _idTextController,
-                    decoration: textInputStyle("아이디"),
-                  ),
-                  heightSizeBox(5),
-                  TextField(
-                    controller: _pwTextController,
-                    decoration: textInputStyle("비밀번호"),
-                  ),
-                  heightSizeBox(5),
-                  GestureDetector(
-                    onTap: () => {
-                      login(),
-                      Navigator.of(context)
-                          .pushNamedAndRemoveUntil("/home", (route) => false)
-                    },
-                    child: Container(
-                      width: double.infinity,
-                      height: 60,
-                      decoration: loginButtonStyle(),
-                      child: Center(
-                          child: Text(
-                        "로그인",
-                        style: TextStyle(
-                            color: textWhiteColor,
-                            fontSize: 15,
-                            fontWeight: FontWeight.bold),
-                      )),
-                    ),
-                  ),
-                  heightSizeBox(10),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      GestureDetector(
-                          child: const Text("아이디 찾기"), onTap: () => {}),
-                      const Text("|"),
-                      GestureDetector(
-                          child: const Text("비밀번호 찾기"), onTap: () => {}),
-                      const Text("|"),
-                      GestureDetector(
-                          child: const Text("회원가입"), onTap: () => {}),
-                    ],
-                  ),
-                ],
+            emptyExpanded(),
+            GestureDetector(
+              onTap: () => {print("카카오톡 로그인 호출")},
+              child: Container(
+                margin: const EdgeInsets.only(right: 30, left: 30),
+                width: double.infinity,
+                height: 68,
+                decoration: loginButtonStyle(),
+                child: Center(
+                    child: Text(
+                  "카카오톡 로그인",
+                  style: TextStyle(
+                      color: themeWhite,
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold),
+                )),
               ),
             ),
-            heightSizeBox(30),
-            Row(children: [
-              widthSizeBox(30),
-              Expanded(
-                child: Container(
-                  height: 1,
-                  color: primaryColor,
-                ),
+            heightSizeBox(10),
+            GestureDetector(
+              onTap: () => {print("구글 로그인 호출")},
+              child: Container(
+                margin: const EdgeInsets.only(right: 30, left: 30),
+                width: double.infinity,
+                height: 68,
+                decoration: loginButtonStyle(),
+                child: Center(
+                    child: Text(
+                  "구글 로그인",
+                  style: TextStyle(
+                      color: themeWhite,
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold),
+                )),
               ),
-              const Text("   소셜 계정으로 로그인   "),
-              Expanded(
-                child: Container(
-                  height: 1,
-                  color: primaryColor,
-                ),
-              ),
-              widthSizeBox(30),
-            ]),
+            ),
             heightSizeBox(20),
-            Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
-              GestureDetector(
-                onTap: () => {},
-                child: Image.asset(
-                  'assets/images/login_kakao.png',
-                  width: 40,
-                  height: 40,
-                ),
-              ),
-              GestureDetector(
-                onTap: () => {},
-                child: Image.asset(
-                  'assets/images/login_google.png',
-                  width: 40,
-                  height: 40,
-                ),
-              ),
-              GestureDetector(
-                onTap: () => {},
-                child: Image.asset(
-                  'assets/images/login_naver.png',
-                  width: 40,
-                  height: 40,
-                ),
-              ),
-            ]),
-            const Expanded(child: SizedBox.shrink()),
           ],
         ),
       ),
@@ -162,6 +96,6 @@ InputDecoration textInputStyle(String hint) {
 BoxDecoration loginButtonStyle() {
   return BoxDecoration(
     borderRadius: const BorderRadius.all(Radius.circular(5.0)),
-    color: buttonActiveColor,
+    color: themeDeepMain,
   );
 }

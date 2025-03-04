@@ -16,11 +16,11 @@ class LoadingPage extends StatelessWidget {
           pref.getBool("loginStatus") == false) {
         print("로그인 안되어 있어 로그인 화면으로 이동");
         Navigator.of(context)
-            .pushNamedAndRemoveUntil("/enter", (route) => false);
+            .pushNamedAndRemoveUntil("/login", (route) => false);
       } else {
         print("로그인 되어 있음.");
         Navigator.of(context)
-            .pushNamedAndRemoveUntil("/enter", (route) => false);
+            .pushNamedAndRemoveUntil("/login", (route) => false);
       }
     });
     return Scaffold(
@@ -28,26 +28,18 @@ class LoadingPage extends StatelessWidget {
       width: double.infinity,
       height: double.infinity,
       decoration: BoxDecoration(
-        color: loadingBackgroundColor,
+        color: themeDeepMain,
         //image: DecorationImage(image: AssetImage('assets/images/loading_background.png'), repeat: ImageRepeat.repeat, scale: 2.5, opacity:0.2)
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            "베이커리타임",
+            "맹가\n노니",
             style: TextStyle(
-              fontFamily: "euljiro",
-              color: textWhiteColor,
+              fontFamily: "bongodicExtraBold",
+              color: themeWhite,
               fontSize: 40,
-            ),
-          ),
-          Text(
-            "시간을 기부하다",
-            style: TextStyle(
-              fontFamily: "euljiro",
-              color: textWhiteColor,
-              fontSize: 20,
             ),
           ),
         ],
